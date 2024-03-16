@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSW</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        header {
+            background-color: #4b6cb7;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #4b6cb7;
+            color: #fff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+        nav ul li a:hover {
+            color: #ccc;
+        }
+        footer {
+            background-color: #4b6cb7;
+            color: #fff;
+            text-align: center;
+            padding: 10px 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            max-width: 600px;
+            margin: 80px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="genpass.html">Generate Password</a></li>
+            <li><a href="ck.html">Check Password Strength</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>Check Password Strength</h2>
+        <label for="password">Enter Password:</label>
+        <input type="password" id="password" placeholder="Enter your password">
+        <button onclick="checkPasswordStrength()">Check Strength</button>
+        <p class="result" id="result"></p>
+    </div>
+    <footer>
+        <p>&copy; 2024 PSW. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function checkPasswordStrength() {
+            var password = document.getElementById("password").value;
+            var strength = 0;
+
+            // Check length
+            if (password.length >= 8) {
+                strength += 1;
+            }
+            // Check if it contains uppercase letters
+            if (password.match(/[A-Z]+/)) {
+                strength += 1;
+            }
+            // Check if it contains lowercase letters
+            if (password.match(/[a-z]+/)) {
+                strength += 1;
+            }
+            // Check if it contains numbers
+            if (password.match(/[0-9]+/)) {
+                strength += 1;
+            }
+            // Check if it contains special characters
+            if (password.match(/[!@#$%^&*()_+{}\[\]:;<>,.?~\-]/)) {
+                strength += 1;
+            }
+
+            // Display result based on strength
+            if (strength < 3) {
+                document.getElementById("result").innerHTML = "Weak password";
+            } else if (strength < 5) {
+                document.getElementById("result").innerHTML = "Moderate password";
+            } else {
+                document.getElementById("result").innerHTML = "Strong password";
+            }
+        }
+    </script>
+</body>
+</html>

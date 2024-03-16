@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSW</title>
+    <style>
+        /* CSS for styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(#49bfdf);
+            color: #333;
+        }
+        nav {
+            background: linear-gradient(to right, #4b6cb7, #182848);
+            color: #fff;
+            padding: 10px 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+        nav ul li a:hover {
+            color: #ccc;
+        }
+        footer {
+            background: linear-gradient(to right, #182848, #4b6cb7);
+            color: #fff;
+            text-align: center;
+            padding: 10px 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .content {
+            text-align: center;
+            padding: 50px 0;
+        }
+        .text-animation {
+            animation: slideUp 3s ease infinite;
+        }
+        @keyframes slideUp {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="genpass.html">Generate Password</a></li>
+            <li><a href="ck.html">Check Password</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <h2 class="text-animation">Secure your password with PWD</h2>
+    </div>
+    <footer>
+        <p>&copy; 2024 PSW. All rights reserved.</p>
+    </footer>
+</body>
+</html>
